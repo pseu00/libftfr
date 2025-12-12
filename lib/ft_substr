@@ -1,0 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/12 16:31:57 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/12 16:32:02 by enucci           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+#include <stddef.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+    size_t  i;
+    size_t  len_string;
+    char    *substr;
+    size_t temp;
+
+    temp = 0;
+    if (!s)
+        return (NULL);
+    while(s[temp] != '\0')
+        temp++;
+    len_string = temp;
+    if (start >= len_string)
+        return ("");
+    if (len > len_string - start)
+        len = len_string - start;
+    substr = (char *)malloc(len + 1);
+    if (!substr)
+        return (NULL);
+    i = 0;
+    while (i < len && s[start + i] != '\0')
+    {
+        substr[i] = s[start + i];
+        i++;
+    }
+    substr[i] = '\0';
+    return (substr);
+}
+
+// int main(void)
+// {
+//  char *s = "Hello, World!";
+//  unsigned int start = 4;
+//  size_t len = 5;
+//  char *result = ft_substr(s, start, len);
+//      printf("Substring: '%s'\n", result);
+//      free(result);
+//  return 0;
+// }
