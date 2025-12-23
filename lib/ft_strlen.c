@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 21:14:03 by enucci            #+#    #+#             */
-/*   Updated: 2025/10/30 21:14:09 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/20 18:40:59 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/20 19:44:30 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 	{
 		i++;
 	}
 	return (i);
 }
-/*int main()
-{
-	char stringa[] = "ciao";
-	int nb = ft_strlen (stringa);
-	printf("%d", nb);
-}*/
+// int main()
+// {
+// 	char stringa[] = "123";
+// 	int nb = ft_strlen (stringa);
+// 	printf("%d", nb);
+// }

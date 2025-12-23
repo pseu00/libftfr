@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 17:08:23 by enucci            #+#    #+#             */
-/*   Updated: 2025/12/20 23:10:35 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/16 18:09:40 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/20 16:48:09 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, char *s2, size_t n)
+void	to_uppercase(unsigned int i, char *c)
 {
-	size_t	i;
-
-	i = 0;
-	while ((i < n) && (s1[i] != '\0' && s2[i] != '\0'))
+	if ((i % 2) == 0 && *c >= 'a' && *c <= 'z')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		*c = *c - 'a' + 'A';
 	}
-	if (i < n)
-	{
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	}
-	return (0);
 }
 
-// int main ()
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+
+// int main()
 // {
-// 	char s1[] = "test\200";
-// 	char s2[] = "test\0";
-// 	size_t n = 6;
-// 	int result;
-// 	result = ft_strncmp (s1, s2, n);
-// 	printf("risultato: %d", result);
-// 	return 0;
+// 	char str[] = "hello world!";
+// 	ft_striteri(str, to_uppercase);
+// 	printf("%s\n", str);
 // }

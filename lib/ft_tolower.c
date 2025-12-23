@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 21:54:26 by enucci            #+#    #+#             */
-/*   Updated: 2025/11/27 21:54:28 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 18:32:30 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	unsigned char a;
+	unsigned char	a;
+
 	a = c;
-	
-	if (a >= 'A' && a <= 'B')
+	if (a >= 'A' && a <= 'Z')
 	{
 		a += 32;
 	}
 	return (a);
 }
-int main ()
-{
-	char c;
-	c = 'A';
-	printf("%c", ft_tolower(c));
-}
+
+// int main ()
+// {
+// 	char c;
+// 	c = 'A';
+// 	printf("%c", ft_tolower(c));
+// }

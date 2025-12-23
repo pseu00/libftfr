@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 15:21:27 by enucci            #+#    #+#             */
-/*   Updated: 2025/11/25 15:22:26 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 18:10:02 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_isalpha (char c)
+int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
-int main ()
-{
-	char c;
-	c = 'c';
-	printf("%d",ft_isalpha(c));
-}
+// int main ()
+// {
+// 	char c;
+// 	c = 'c';
+// 	printf("%d",ft_isalpha(c));
+// }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isdigit.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:20:22 by enucci            #+#    #+#             */
-/*   Updated: 2025/11/25 16:20:34 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 18:10:20 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isdigit (char c)
+int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 48 && c <= 57)
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
-int main ()
-{
-	char c;
-	c = 'c';
-	printf("%d",ft_isdigit(c));
-}
+
+// int main ()
+// {
+// 	char c;
+// 	c = 'c';
+// 	printf("%d",ft_isdigit(c));
+// }

@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 22:18:49 by enucci            #+#    #+#             */
-/*   Updated: 2025/12/20 16:46:49 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/17 13:19:49 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/20 16:33:25 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	a;
-	const char		*last;
+	long	nb;
+	char	c;
 
-	a = (unsigned char)c;
-	last = NULL;
-	while (*s)
+	nb = n;
+	if (nb < 0)
 	{
-		if (*s == a)
-		{
-			last = s;
-		}
-		s++;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
-	if (a == '\0')
-		return ((char *)s);
-	return ((char *)last);
+	if (nb >= 10)
+		ft_putnbr_fd((int)(nb / 10), fd);
+	c = '0' + (nb % 10);
+	write(fd, &c, 1);
 }
-
-//  int main ()
-//  {
-// 	char str[] = "ciao a tutti";
-// 	char to_find = 'a';
-// 	printf("%s", ft_strrchr(str, to_find));
-// 	return (0);
-//  }

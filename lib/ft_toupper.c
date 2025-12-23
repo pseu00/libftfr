@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 21:33:01 by enucci            #+#    #+#             */
-/*   Updated: 2025/11/27 21:33:03 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 16:46:05 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	unsigned char a;
+	unsigned char	a;
+
 	a = c;
-	
 	if (a >= 'a' && a <= 'z')
 	{
 		a -= 32;
 	}
-			return (a);
-}
-int main()
-{
-	char c;
-	c = 'a';
-	printf("%c", ft_toupper(c));
+	return (a);
 }
 
+// int main()
+// {
+// 	char c;
+// 	c = 'a';
+// 	printf("%c", ft_toupper(c));
+// }

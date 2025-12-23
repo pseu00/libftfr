@@ -1,49 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 14:28:53 by enucci            #+#    #+#             */
+/*   Created: 2025/12/16 16:06:13 by enucci            #+#    #+#             */
 /*   Updated: 2025/12/20 18:35:51 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	a;
-	size_t	len1;
-	size_t	len2;
-	char	*s3;
+	unsigned int	i;
+	size_t			len;
+	char			*res;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	s3 = malloc ((len1 + len2) + 1);
 	i = 0;
-	a = 0;
-	if (!s3)
+	if (!s || !f)
 		return (NULL);
-	while (i < len1)
+	len = ft_strlen(s);
+	res = malloc(len + 1);
+	if (!res)
+		return (NULL);
+	while (i < len)
 	{
-		s3[i] = s1[i];
+		res[i] = f(i, s[i]);
 		i++;
 	}
-	while (a < len2)
-	{
-		s3[i + a] = s2[a];
-		a++;
-	}
-	s3[i + a] = s2[a];
-	return (s3);
+	res[len] = '\0';
+	return (res);
 }
 
-// int main()
-// {	
-// 	char s1[10] = "ciao ";
-// 	char s2[10] = "a tutti";
-// 	printf("%s\n", ft_strjoin(s1, s2));
+// static char	mapper(unsigned int i, char c)
+// {
+// 	if ((i % 2) == 0 && c >= 'a' && c <= 'z')
+// 		return ((char)(c - ('a' - 'A')));
+// 	return (c);
+// }
+
+// int main(void)
+// {
+// 	char const *s = "ciao a tutti hola";
+// 	char *res = ft_strmapi(s, mapper);
+// 	printf("%s\n", res);
+// 	free(res);
 // }

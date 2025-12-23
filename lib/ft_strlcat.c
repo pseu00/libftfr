@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:45:31 by enucci            #+#    #+#             */
-/*   Updated: 2025/10/29 18:45:34 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 17:07:16 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	d;
-	unsigned int	s;
-	unsigned int	i;
+	size_t	d;
+	size_t	i;
+	size_t	s;
 
 	d = 0;
 	s = 0;

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:21:33 by enucci            #+#    #+#             */
-/*   Updated: 2025/10/27 22:21:37 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 13:52:41 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {

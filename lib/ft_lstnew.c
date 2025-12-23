@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 22:18:49 by enucci            #+#    #+#             */
-/*   Updated: 2025/12/20 16:46:49 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/17 14:08:05 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/20 13:08:47 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	a;
-	const char		*last;
+	t_list	*nodo;
 
-	a = (unsigned char)c;
-	last = NULL;
-	while (*s)
-	{
-		if (*s == a)
-		{
-			last = s;
-		}
-		s++;
-	}
-	if (a == '\0')
-		return ((char *)s);
-	return ((char *)last);
+	nodo = malloc(sizeof(t_list));
+	if (!nodo)
+		return (NULL);
+	nodo->content = content;
+	nodo->next = NULL;
+	return (nodo);
 }
-
-//  int main ()
-//  {
-// 	char str[] = "ciao a tutti";
-// 	char to_find = 'a';
-// 	printf("%s", ft_strrchr(str, to_find));
-// 	return (0);
-//  }

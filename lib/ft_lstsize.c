@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 22:18:49 by enucci            #+#    #+#             */
-/*   Updated: 2025/12/20 16:46:49 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/17 15:46:22 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/19 23:17:16 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned char	a;
-	const char		*last;
+	int	i;
 
-	a = (unsigned char)c;
-	last = NULL;
-	while (*s)
+	i = 0;
+	while (lst)
 	{
-		if (*s == a)
-		{
-			last = s;
-		}
-		s++;
+		i++;
+		lst = lst->next;
 	}
-	if (a == '\0')
-		return ((char *)s);
-	return ((char *)last);
+	return (i);
 }
-
-//  int main ()
-//  {
-// 	char str[] = "ciao a tutti";
-// 	char to_find = 'a';
-// 	printf("%s", ft_strrchr(str, to_find));
-// 	return (0);
-//  }

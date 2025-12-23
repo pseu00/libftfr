@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isprint.c                                          :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enucci <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:55:55 by enucci            #+#    #+#             */
-/*   Updated: 2025/11/25 16:55:59 by enucci           ###   ########.fr       */
+/*   Updated: 2025/12/20 18:10:30 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isprint (char c)
+int	ft_isprint(int c)
 {
-	if (c >= ' ' && c <= '~')
+	if (c >= 32 && c <= 126)
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
-int main ()
-{
-	char c;
-	c = 'c';
-	printf("%d",ft_isprint(c));
-}
+
+// int main ()
+// {
+// 	char c;
+// 	c = 'c';
+// 	printf("%d",ft_isprint(c));
+// }

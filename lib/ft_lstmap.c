@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enucci <enucci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 22:18:49 by enucci            #+#    #+#             */
-/*   Updated: 2025/12/20 16:46:49 by enucci           ###   ########.fr       */
+/*   Created: 2025/12/18 17:43:19 by enucci            #+#    #+#             */
+/*   Updated: 2025/12/20 23:28:33 by enucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char	a;
-	const char		*last;
+	t_list	*lista;
+	t_list	*nodo;
 
-	a = (unsigned char)c;
-	last = NULL;
-	while (*s)
+	if (!lst || !f || !del)
+		return (NULL);
+	lista = NULL;
+	nodo = NULL;
+	while (lst)
 	{
-		if (*s == a)
+		nodo = ft_lstnew(f(lst->content));
+		if (!nodo)
 		{
-			last = s;
+			ft_lstclear(&lista, del);
+			return (NULL);
 		}
-		s++;
+		ft_lstadd_back(&lista, nodo);
+		lst = lst->next;
 	}
-	if (a == '\0')
-		return ((char *)s);
-	return ((char *)last);
+	return (lista);
 }
-
-//  int main ()
-//  {
-// 	char str[] = "ciao a tutti";
-// 	char to_find = 'a';
-// 	printf("%s", ft_strrchr(str, to_find));
-// 	return (0);
-//  }
